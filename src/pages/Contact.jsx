@@ -1,10 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable react/no-unescaped-entities */
+import toast, { Toaster } from 'react-hot-toast';
 export default function Contact() {
-
  const handleSubmit = async (e) => {
     e.preventDefault();
-
     const response = await fetch("https://formspree.io/f/xlgyvzkq", {
         method: "POST",
         body: new FormData(e.target),
@@ -14,13 +11,14 @@ export default function Contact() {
     });
 
     if (response.ok) {
-        alert("Message sent!");
+        toast.success("Thank you for reaching out! I've received your message and will get back to you as soon as possible.");
     }
 };
 
 
   return (
     <div id="contact" className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32  dark:text-gray-100">
+      <Toaster />
       <div className="flex flex-col justify-between">
         <div className="space-y-2">
           <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
@@ -32,6 +30,7 @@ export default function Contact() {
           alt=""
           className="h-52 md:h-64"
         />
+
       </div>
       <form
         onSubmit={handleSubmit}
@@ -45,8 +44,11 @@ export default function Contact() {
           <input
             id="name"
             type="text"
+            name="name"
             placeholder=""
             className="w-full p-3 rounded dark:bg-gray-800"
+            required
+            maxLength={50}
           />
         </div>
         <div>
@@ -56,7 +58,9 @@ export default function Contact() {
           <input
             id="email"
             type="email"
+            name="email"
             className="w-full p-3 rounded dark:bg-gray-800"
+            required
           />
         </div>
         <div>
@@ -65,12 +69,16 @@ export default function Contact() {
           </label>
           <textarea
             id="message"
+            name="message"
+            rows="3"
             className="w-full p-3 rounded dark:bg-gray-800"
+            required
+            maxLength={500}
           ></textarea>
         </div>
         <button
           type="submit"
-          className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded bg-[#FC4370] text-white"
+          className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded bg-[#FC4370] text-white cursor-pointer hover:bg-[#FC4370]/90 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-50"
         >
           Send Message
         </button>
