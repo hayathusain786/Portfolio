@@ -1,6 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 export default function Contact() {
+
+ const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const response = await fetch("https://formspree.io/f/xlgyvzkq", {
+        method: "POST",
+        body: new FormData(e.target),
+        headers: {
+            Accept: "application/json",
+        },
+    });
+
+    if (response.ok) {
+        alert("Message sent!");
+    }
+};
+
+
   return (
     <div id="contact" className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32  dark:text-gray-100">
       <div className="flex flex-col justify-between">
@@ -16,7 +34,7 @@ export default function Contact() {
         />
       </div>
       <form
-       
+        onSubmit={handleSubmit}
         className="space-y-6 ng-untouched ng-pristine ng-valid"
       >
         <div>
