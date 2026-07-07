@@ -12,6 +12,7 @@ export default function Contact() {
 
     if (response.ok) {
         toast.success("Thank you for reaching out! I've received your message and will get back to you as soon as possible.");
+         e.target.reset();
     }
 };
 
