@@ -35,6 +35,7 @@ export default function Contact() {
       </div>
       <form
         onSubmit={handleSubmit}
+        method="POST"
         className="space-y-6 ng-untouched ng-pristine ng-valid"
       >
         <div>
