@@ -9,7 +9,7 @@ const data = [
     subTitle:"ASP.NET Core MVC • PostgreSQL",
     description: "A GIS-enabled municipal taxation system designed to manage property surveys, tax assessment, demand generation, and payment tracking. I contributed to backend development, database design, tax calculation logic, GIS integration, report generation, and performance optimization while building scalable modules for local government operations.",
     highlights:"Property Survey Management,GIS Mapping Integration,Tax Assessment & Demand Generation,Payment & Reports,PostgreSQL + PostGIS",
-    img: "/Group1.jpg",
+    img: "/survey.png",
   },
   {
     name: "College ERP",
@@ -64,18 +64,18 @@ export default function Carousel() {
         <div className="flex flex-row items-center">
           <div className="section-line bg-[#FC4370] w-16 h-1 mr-6" style={{width:'4rem',}}></div>
           <p
-            className="section-category text-greyText text-base font-medium"
+            className="section-category text-greyText sm:text-base font-medium md:text-4xl"
             style={{opacity: 1, transform:'translate(0px, 0px)',}}
           >
             Work
           </p>
         </div>
         <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse">
-          <div className="flex items-center justify-center max-w-[36rem] ">
+          <div className="flex items-center justify-center max-w-xl">
             <img className=" rounded-xl" src={data[currentIndex].img} alt="" />
           </div>
           <div className="flex flex-col justify-center flex-1 px-6 py-12 dark:bg-coolGray-900">
-            <div className=" flex items-center px-3 my-[4rem] sm:ml-[-2rem]">
+            <div className=" flex items-center px-3 mb-4 sm:ml-0">
               <button
                 onClick={handleOnPrevClick}
                 aria-label="previous"

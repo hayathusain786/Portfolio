@@ -2,19 +2,19 @@ export default function Hero() {
   return (
     <section id="home" className="">
       <div className="flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
-        <div className="flex flex-col justify-center p-6 text-center  lg:text-left">
+        <div className="flex flex-col justify-center p-6 text-center lg:text-left">
           <div className="">
             <div className="mb-[.7rem] ">
               <h1 className="text-5xl font-bold  sm:text-6xl">
                 Hey, Im <span className="text-[#FC4370]">Hayat Husain</span>
               </h1>
             </div>
-            <div className="my-[2rem] w-2xl">
+            <div className="my-8 lg:w-2xl">
               <h1 className="text-5xl font-bold  sm:text-5xl">
                 A <span className="text-[#FC4370]" >.Net Developer&nbsp;</span>
               </h1>
             </div>
-            <div className="my-[2rem] w-2xl">
+            <div className="my-8 lg:w-2xl">
               <h1 className="text-5xl font-bold  sm:text-5xl">
                 with 3+ Years of Experience
               </h1>
@@ -30,11 +30,11 @@ export default function Hero() {
             </a>
           </div>
         </div>
-        <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+        <div className="hidden sm:flex items-center justify-center p-6 mt-8 lg:mt-0 lg:h-96 xl:h-112 2xl:h-128">
           <img
             src="/hero_illustration.svg"
             alt=""
-            className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
+            className="object-contain h-72 lg:h-96 xl:h-112 2xl:h-128"
           />
         </div>
       </div>

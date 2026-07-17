@@ -18,7 +18,7 @@ export default function Contact() {
 
 
   return (
-    <div id="contact" className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32  dark:text-gray-100">
+    <div id="contact" className="grid max-w-7xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32  dark:text-gray-100">
       <Toaster />
       <div className="flex flex-col justify-between">
         <div className="space-y-2">

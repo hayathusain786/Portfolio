@@ -27,13 +27,13 @@ export default function About() {
     },
   ];
   return (
-    <div id="about" className="container px-[1rem] sm:px-[4rem] sm:mx-auto">
+    <div id="about" className="container px-4 sm:px-16 sm:mx-auto">
       <div className="flex flex-row items-center   ">
         <div style={{ transform: "none", transformOrigin: "0% 50% 0px" }}>
           <div className="section-line bg-[#FC4370] w-16 h-1 mr-6"></div>
         </div>
         <div>
-          <p className="section-category text-grey text-base font-medium">
+          <p className="section-category text-grey sm:text-base font-medium md:text-4xl">
             About
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function About() {
                 </p>
               </div>
             </div>
-            <div className="mt-[1rem]">
+            <div className="mt-4">
               <p className="my-6 dark:text-gray-400 text-xl">
                 I'm a
                 <span className="text-[#FC4370] font-semibold px-1">
@@ -139,7 +139,7 @@ export default function About() {
                 </p>
               </div>
             </div>
-            <div className="mt-[1rem]">
+            <div className="mt-4">
               {techStackdata.map((item, index) => (
                 <p className="my-6 dark:text-gray-400 text-xl" key={index}>
                   <span className="text-[#FC4370] font-bold px-1">

@@ -30,7 +30,6 @@ export default function NavComponent() {
   // Call hook passing in the ref and a function to call on outside click
   useOnClickOutside(ref, () => setModalOpen(false));
 
-
   return (
     <div className="sticky top-0 z-10 backdrop-blur-sm  text-xl font-bold drop-shadow-xl flex-none transition-colors duration-500  ">
       <div className="w-full container mx-auto">
@@ -45,15 +44,14 @@ export default function NavComponent() {
               <>
                 {isModalOpen ? (
                   <div
-                    ref={ref}
-                    className="fixed w-[24rem] right-0 top-0   p-2 h-[100vh]  transition transform md:hidden"
+                    className="fixed w-[24rem] right-0 top-0   p-2 h-screen  transition transform md:hidden"
                   >
-                    <div className="rounded-lg shadow-lg  ring-1 h-full ring-black ring-opacity-5 bg-[#141628] border-[1px] border-red-100/20 text-white divide-y-2 divide-gray-50">
+                    <div className="rounded-lg shadow-lg  ring-1 h-full ring-black ring-opacity-5 bg-[#141628] border border-red-100/20 text-white divide-y-2 divide-gray-50">
                       <div className="pt-5 pb-6 px-5">
-                        <div className="-mr-2 float-right mb-3">
+                        <div className="mr-2 float-right mb-3">
                           <button
                             onClick={() => setModalOpen(!true)}
-                            className="bg-white rounded-md p-2 inline-flex items-center justify-center  hover:text-gray-500 hover:bg-gray-100 "
+                            className="bg-white rounded-md p-2 inline-flex items-center justify-center  hover:text-gray-500 hover:bg-gray-100 text-black"
                           >
                             <span className="sr-only">Close menu</span>
                             <svg
@@ -74,15 +72,16 @@ export default function NavComponent() {
                           </button>
                         </div>
 
-                        <div className="mt-[5rem] z-10 relative">
+                        <div className="mt-20 z-10 relative">
                           <nav className="grid gap-y-8">
                             {navData.map((item,index) => (
                               <a
                                 key={index}
                                 href={item.href}
-                                className="-m-3 p-3 flex items-center rounded-md hover:bg-black  border-[1px] border-red-500/60"
+                                onClick={() => setModalOpen(false)}
+                                className="mx-3 p-2 flex items-center gap-1 rounded-md hover:bg-black  border border-red-500/60"
                               >
-                                <h1 className="my-3 ml-3 text-3xl font-bold ">
+                                <h1 className="text-xl font-bold">
                                   {item.name}
                                 </h1>
                               </a>
